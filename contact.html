@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <head>
   <link rel="icon" href="/images/attachments/41796338.png" type="image/png" sizes="16x16">
   <title>Bread-and-Code</title>
@@ -96,15 +96,15 @@
       <div class="row mb-5">
 
         <div class="col-12 mb-5 order-2">
-          <form action="breadandcode.research.official@gmail.com" method="post">
+          <form action="https://formspree.io/mrgerblo" method="POST">
             <div class="row">
               <div class="col-md-6 form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" class="form-control ">
+                <input type="text" name="name" id="name" class="form-control ">
               </div>
               <div class="col-md-6 form-group">
                 <label for="phone">Phone</label>
-                <input type="text" id="phone" class="form-control ">
+                <input type="text" id="phone" name="_phone"class="form-control ">
               </div>
             </div>
             <div class="row">
@@ -115,7 +115,7 @@
             <div class="row">
               <div class="col-md-12 form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" class="form-control ">
+                <input type="email" name="_replyto" id="email" class="form-control ">
               </div>
             </div>
             <div class="row">
@@ -126,7 +126,7 @@
             </div>
             <div class="row">
               <div class="col-md-6 form-group">
-                <input type="submit" value="Send Message" class="btn btn-outline-black px-3 py-3">
+                <input type="submit"  value="Send Message" class="btn btn-outline-black px-3 py-3">
               </div>
             </div>
           </form>
@@ -343,6 +343,25 @@
   <script src="js/jquery.stellar.min.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/main.js"></script>
+
+  <script>
+    var name = document.getElementById("name")
+    var phone = document.getElementById("phone")
+    var email = document.getElementById("email")
+    var message = document.getElementById("message")
+  function sendMail() {
+    $.ajax({
+      type: 'POST',
+      url: 'https://formspree.io/mrgerblo',
+      data: $(this).serialize(),
+      dataType: "json",
+     }).done(function(response) {
+       console.log(response); // if you're into that sorta thing
+     });
+  }
+
+  </script>
 </body>
 
 </html>
+
