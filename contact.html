@@ -344,23 +344,6 @@
   <script src="js/aos.js"></script>
   <script src="js/main.js"></script>
 
-  <script>
-    var name = document.getElementById("name")
-    var phone = document.getElementById("phone")
-    var email = document.getElementById("email")
-    var message = document.getElementById("message")
-  function sendMail() {
-    $.ajax({
-      type: 'POST',
-      url: 'https://formspree.io/mrgerblo',
-      data: $(this).serialize(),
-      dataType: "json",
-     }).done(function(response) {
-       console.log(response); // if you're into that sorta thing
-     });
-  }
-
-  </script>
 </body>
 
 </html>
